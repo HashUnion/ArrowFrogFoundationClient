@@ -1,9 +1,66 @@
 <Window xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-        x:Class="ArrowFrogFoundationClient.MainWindow"
-        Title="ArrowFrogFoundationClient">
-    Welcome to Avalonia!
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:suki="using:SukiUI.Controls"
+    xmlns:material="using:Material.Icons.Avalonia"
+    xmlns:controls="using:ArrowFrogFoundationClient.Controls" x:Class="ArrowFrogFoundationClient.MainWindow" Classes="NakedWindow">
+    <suki:InteractiveContainer>
+        <suki:DesktopPage Background="#F7F7F7">
+            <StackPanel>
+                <StackPanel Background="#E6E6EB" HorizontalAlignment="Stretch">
+                    <Button Content="链接钱包" Width="160" Background="#656596" Foreground="#F7F7F7" HorizontalAlignment="Right"></Button>
+                </StackPanel>
+                <ScrollViewer>
+                    <WrapPanel Orientation="Horizontal">
+                        <controls:FundSharesToken/>
+                    </WrapPanel>
+                </ScrollViewer>
+            </StackPanel>
+            <!-- <suki:SideMenu WinUIStyle="True">
+        <suki:SideMenu.DataContext>
+            <suki:SideMenuModel>
+                <suki:SideMenuModel.HeaderContent>
+                </suki:SideMenuModel.HeaderContent>
+                <suki:SideMenuModel.MenuItems>
+                    <suki:SideMenuItem Header="财务管理" Icon="Cash100">
+                        <suki:SideMenuItem.Content>
+                            <ScrollViewer>
+                                <WrapPanel Orientation="Horizontal">
+                                    <Border Classes="Card" Width="300">
+                                        <StackPanel>
+                                            <TextBlock Classes="h3" Margin="5,0,0,15">份额代币</TextBlock>
+                                            <TextBlock DataContext="MainWindowViewModel" Text="{Binding Text}"></TextBlock>
+                                        </StackPanel>
+                                    </Border>
+                                </WrapPanel>
+                            </ScrollViewer>
+                        </suki:SideMenuItem.Content>
+                    </suki:SideMenuItem>
+                    <suki:SideMenuItem Header="Statistics" Icon="Cash100">
+                        <suki:SideMenuItem.Content>
+                            <TextBlock HorizontalAlignment="Center" Text="Statistics Page" VerticalAlignment="Center" />
+                        </suki:SideMenuItem.Content>
+                    </suki:SideMenuItem>
+                    <suki:SideMenuItem Header="Library" Icon="BookmarkMultipleOutline">
+                        <suki:SideMenuItem.Content>
+                            <TextBlock HorizontalAlignment="Center" Text="Library Page" VerticalAlignment="Center" />
+                        </suki:SideMenuItem.Content>
+                    </suki:SideMenuItem>
+                    <suki:SideMenuItem Header="Users" Icon="UserSearchOutline">
+                        <suki:SideMenuItem.Content>
+                            <TextBlock HorizontalAlignment="Center" Text="Users Page" VerticalAlignment="Center" />
+                        </suki:SideMenuItem.Content>
+                    </suki:SideMenuItem>
+                </suki:SideMenuModel.MenuItems>
+                <suki:SideMenuModel.FooterMenuItems>
+                    <suki:SideMenuItem Header="Settings" Icon="SettingsOutline">
+                        <suki:SideMenuItem.Content>
+                            <TextBlock HorizontalAlignment="Center" Text="Settings Page" VerticalAlignment="Center" />
+                        </suki:SideMenuItem.Content>
+                    </suki:SideMenuItem>
+                </suki:SideMenuModel.FooterMenuItems>
+            </suki:SideMenuModel>
+        </suki:SideMenu.DataContext>
+    </suki:SideMenu> -->
+        </suki:DesktopPage>
+    </suki:InteractiveContainer>
 </Window>

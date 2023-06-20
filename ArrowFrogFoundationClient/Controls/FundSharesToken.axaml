@@ -1,0 +1,13 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Class="ArrowFrogFoundationClient.Controls.FundSharesToken">
+    <Border Classes="Card" Width="300" BorderThickness="2">
+        <StackPanel>
+            <TextBlock Classes="h4" Margin="5,0,0,15">份额代币</TextBlock>
+            <StackPanel>
+                <TextBlock Text="{Binding FundSharesTokenAddress}"></TextBlock>
+                <TextBox Text="{Binding NewFundSharesTokenAddress}" Watermark="新的份额代币地址"></TextBox>
+                <Button Content="提交" Command="{Binding SubmitFundSharesTokenAddress}"></Button>
+            </StackPanel>
+        </StackPanel>
+    </Border>
+</UserControl>
