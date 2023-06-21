@@ -6,7 +6,7 @@ using Avalonia.Controls.Primitives;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 
-namespace ArrowFrogFoundationClient
+namespace ArrowFrogFoundationClient.Views
 {
     public partial class MainWindow : Window
     {
