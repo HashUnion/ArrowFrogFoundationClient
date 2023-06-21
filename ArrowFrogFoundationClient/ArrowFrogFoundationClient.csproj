@@ -7,13 +7,12 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="11.0.0-preview8" />
-    <PackageReference Include="Avalonia.Controls.PanAndZoom" Version="11.0.0-preview8" />
-    <PackageReference Include="Avalonia.Desktop" Version="11.0.0-preview8" />
-    <PackageReference Include="Avalonia.Diagnostics" Version="11.0.0-preview8" />
-    <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.0-preview8" />
-    <PackageReference Include="Avalonia.Themes.Simple" Version="11.0.0-preview8" />
-    <PackageReference Include="Material.Icons.Avalonia" Version="2.0.0-preview3" />
-    <PackageReference Include="SukiUI" Version="4.8.0" />
+    <PackageReference Include="Avalonia" Version="11.0.0-preview8"/>
+    <PackageReference Include="Avalonia.Desktop" Version="11.0.0-preview8"/>
+    <PackageReference Include="Avalonia.Diagnostics" Version="11.0.0-preview8"/>
+    <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.0-preview8"/>
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.0-preview8"/>
+    <PackageReference Include="Avalonia.Xaml.Interactivity" Version="11.0.0-preview8"/>
+    <PackageReference Include="ReactiveUI.Fody" Version="19.2.1"/>
   </ItemGroup>
 </Project>

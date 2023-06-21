@@ -1,66 +1,58 @@
 <Window xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:suki="using:SukiUI.Controls"
-    xmlns:material="using:Material.Icons.Avalonia"
-    xmlns:controls="using:ArrowFrogFoundationClient.Controls" x:Class="ArrowFrogFoundationClient.Views.MainWindow" Classes="NakedWindow">
-    <suki:InteractiveContainer>
-        <suki:DesktopPage Background="#F7F7F7">
-            <StackPanel>
-                <StackPanel Background="#E6E6EB" HorizontalAlignment="Stretch">
-                    <Button Content="链接钱包" Width="160" Background="#656596" Foreground="#F7F7F7" HorizontalAlignment="Right"></Button>
-                </StackPanel>
-                <ScrollViewer>
-                    <WrapPanel Orientation="Horizontal">
-                        <controls:FundSharesToken/>
-                    </WrapPanel>
-                </ScrollViewer>
-            </StackPanel>
-            <!-- <suki:SideMenu WinUIStyle="True">
-        <suki:SideMenu.DataContext>
-            <suki:SideMenuModel>
-                <suki:SideMenuModel.HeaderContent>
-                </suki:SideMenuModel.HeaderContent>
-                <suki:SideMenuModel.MenuItems>
-                    <suki:SideMenuItem Header="财务管理" Icon="Cash100">
-                        <suki:SideMenuItem.Content>
-                            <ScrollViewer>
-                                <WrapPanel Orientation="Horizontal">
-                                    <Border Classes="Card" Width="300">
-                                        <StackPanel>
-                                            <TextBlock Classes="h3" Margin="5,0,0,15">份额代币</TextBlock>
-                                            <TextBlock DataContext="MainWindowViewModel" Text="{Binding Text}"></TextBlock>
-                                        </StackPanel>
-                                    </Border>
-                                </WrapPanel>
-                            </ScrollViewer>
-                        </suki:SideMenuItem.Content>
-                    </suki:SideMenuItem>
-                    <suki:SideMenuItem Header="Statistics" Icon="Cash100">
-                        <suki:SideMenuItem.Content>
-                            <TextBlock HorizontalAlignment="Center" Text="Statistics Page" VerticalAlignment="Center" />
-                        </suki:SideMenuItem.Content>
-                    </suki:SideMenuItem>
-                    <suki:SideMenuItem Header="Library" Icon="BookmarkMultipleOutline">
-                        <suki:SideMenuItem.Content>
-                            <TextBlock HorizontalAlignment="Center" Text="Library Page" VerticalAlignment="Center" />
-                        </suki:SideMenuItem.Content>
-                    </suki:SideMenuItem>
-                    <suki:SideMenuItem Header="Users" Icon="UserSearchOutline">
-                        <suki:SideMenuItem.Content>
-                            <TextBlock HorizontalAlignment="Center" Text="Users Page" VerticalAlignment="Center" />
-                        </suki:SideMenuItem.Content>
-                    </suki:SideMenuItem>
-                </suki:SideMenuModel.MenuItems>
-                <suki:SideMenuModel.FooterMenuItems>
-                    <suki:SideMenuItem Header="Settings" Icon="SettingsOutline">
-                        <suki:SideMenuItem.Content>
-                            <TextBlock HorizontalAlignment="Center" Text="Settings Page" VerticalAlignment="Center" />
-                        </suki:SideMenuItem.Content>
-                    </suki:SideMenuItem>
-                </suki:SideMenuModel.FooterMenuItems>
-            </suki:SideMenuModel>
-        </suki:SideMenu.DataContext>
-    </suki:SideMenu> -->
-        </suki:DesktopPage>
-    </suki:InteractiveContainer>
+    xmlns:views="using:ArrowFrogFoundationClient.Views" x:Class="ArrowFrogFoundationClient.Views.MainWindow" x:Name="root" MinWidth="720" MinHeight="480" WindowStartupLocation="CenterScreen" TransparencyLevelHint="AcrylicBlur" ExtendClientAreaTitleBarHeightHint="50" ExtendClientAreaToDecorationsHint="True" ExtendClientAreaChromeHints="Default, PreferSystemChrome, OSXThickTitleBar">
+    <Panel x:Name="background" IsHitTestVisible="False" Background="{DynamicResource AcrylicTrimBackground}">
+        <ExperimentalAcrylicBorder>
+            <ExperimentalAcrylicBorder.Material>
+                <ExperimentalAcrylicMaterial BackgroundSource="Digger" TintColor="Transparent" TintOpacity="0" FallbackColor="{DynamicResource AcrylicTrimBackground}" MaterialOpacity="0" />
+            </ExperimentalAcrylicBorder.Material>
+        </ExperimentalAcrylicBorder>
+        <Grid RowDefinitions="50,*">
+            <Panel Name="titleBar" Grid.Row="0" Background="#ffffff">
+            </Panel>
+            <Panel Name="content" Grid.Row="1" Background="#ffffff">
+                <Grid ColumnDefinitions="60,*">
+                    <Panel Name="navBar" Grid.Column="0" Background="#0fffff">
+                        <Grid RowDefinitions="*,5,100">
+                            <Panel Grid.Row="0" Background="#ff0fff"/>
+                            <Panel Grid.Row="1">
+                                <Separator Background="#000000"/>
+                            </Panel>
+                            <Panel Grid.Row="2" Background="#ff0fff">
+                                <Grid RowDefinitions="*,*">
+                                    <Panel Grid.Row="0" Background="#ffff0f"/>
+                                    <Panel Grid.Row="1" Background="#ffff0f"/>
+                                </Grid>
+                            </Panel>
+                        </Grid>
+                    </Panel>
+                    <Panel Grid.Column="1" Background="#0fffff">
+                        <Border CornerRadius="10 0 0 0" BoxShadow="inset 0 0 5 0 #000000" ClipToBounds="True" IsHitTestVisible="False" Margin="0 0 -5 -5" />
+                    </Panel>
+                </Grid>
+            </Panel>
+        </Grid>
+        <!-- <DockPanel>
+                <DockPanel DockPanel.Dock="Left">
+                    <StackPanel DockPanel.Dock="Top" VerticalAlignment="Top">
+                        <Button Content="X" Width="75" Height="58" Margin="1 1"/>
+                        <Button Content="Y" Width="75" Height="58" Margin="1 1"/>
+                    </StackPanel>
+                    <Separator />
+                    <StackPanel DockPanel.Dock="Bottom" VerticalAlignment="Bottom">
+                        <Button Content="X" Width="75" Height="58" Margin="1 1"/>
+                        <Button Content="Y" Width="75" Height="58" Margin="1 1"/>
+                    </StackPanel>
+                </DockPanel>
+                <Border x:Name="content" BorderBrush="{DynamicResource TileBorderColor}" BorderThickness="1 1 0 0" CornerRadius="10 0 0 0" ClipToBounds="True">
+                    <Panel VerticalAlignment="Bottom" Height="100">
+                        <TextBlock Text="XXXXX"></TextBlock>
+                    </Panel>
+                    <DockPanel>
+                        <ContentControl ClipToBounds="False" Content="{Binding MainScreen.CurrentPage}" />
+                    </DockPanel>
+                    <Border CornerRadius="10 0 0 0" BoxShadow="inset 0 0 5 0 #000000" ClipToBounds="True" IsHitTestVisible="False" Margin="0 0 -5 -5" />
+                </Border>
+            </DockPanel> -->
+    </Panel>
 </Window>
